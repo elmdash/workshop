@@ -2,3 +2,4 @@
   roles:
   - { role: roles/priority }
   - { role: roles/ssh }
+  - { role: roles/intellij }

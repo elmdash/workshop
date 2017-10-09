@@ -1,0 +1,24 @@
+- name: "Creating directory for IntelliJ"
+  file:
+    path: "{{ ansible_env.HOME }}/Applications/intellij"
+    state: directory
+
+#- name: "Downloading Intellij Ultimate"
+#  unarchive:
+#    src: https://download.jetbrains.com/idea/ideaIU-2017.2.5.tar.gz
+#    dest: "{{ ansible_env.HOME }}/Applications/intellij"
+#    remote_src: true
+
+- name: "Getting latest version (kinda)"
+#  command: ls -lt {{ ansible_env.HOME }}/Applications/intellij | tail -n1 | awk '{printf "{{ ansible_env.HOME }}\/Applications\/intellij\//%s" $9}'
+  command: bash -c "ls -lt {{ ansible_env.HOME }}/Applications/intellij | tail -n1 | awk '{printf $9}'"
+  register: intellij_latest_download
+
+- set_fact:
+    intellij_location: "{{ ansible_env.HOME }}/Applications/intellij/{{ intellij_latest_download.stdout }}"
+
+- name: "Creating desktop file for intellij app"
+  template:
+    src: entry.desktop
+    dest: /usr/share/applications/intellij.desktop
+  become: true
