@@ -1,7 +1,15 @@
-- name: "Adding system76 apt repo"
+- name: "Adding apt key"
+  become: true
+  apt_key:
+    url: https://dl.sinew.in/keys/enpass-linux.key
+
+- name: "Adding apt repos"
   become: true
   apt_repository:
-    repo: ppa:system76-dev/stable
+    repo: "{{ item }}"
+  with_items:
+    - ppa:system76-dev/stable
+    - deb http://repo.sinew.in/ stable main
 
 - name: "Apt Update"
   become: true
@@ -10,10 +18,25 @@
     cache_valid_time: 3600
     upgrade: full
 
-- name: "Install basic packages"
+- name: "Install packages"
   become: true
   apt: 
     name: "{{ item }}"
   with_items:
     - vim
     - system76-driver
+    - system76-driver-nvidia
+    - enpass
+
+- name: "Update grub nomodeset (after installing s76 nvidia driver"
+  become: true
+  lineinfile:
+    regexp: '^GRUB_CMDLINE_LINUX='
+    line: GRUB_CMDLINE_LINUX=””
+    dest: /etc/default/grub
+  register: grubfix
+
+- name: "Update grub"
+  become: true
+  command: "update-grub"
+  when: grubfix.changed
