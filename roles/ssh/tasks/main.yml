@@ -1,9 +1,9 @@
-- name: "Create github ssh directory"
+- name: "SSH | Create github ssh directory"
   file: 
     path: "{{ ansible_env.HOME }}/.ssh/github"
     state: directory
 
-- name: "Install github ssh keys"
+- name: "SSH | Install github ssh keys"
   become: true
   copy:
     dest: "{{ ansible_env.HOME }}/.ssh/github/{{ item.file }}"
@@ -17,7 +17,7 @@
     - file: id_rsa.pub
       content: "{{ ssh_public_key }}"
 
- - name: "Updating ssh config to use github keys"
+ - name: "SSH | Updating ssh config to use github keys"
    blockinfile:
     dest: "{{ ansible_env.HOME }}/.ssh/config"
     create: true

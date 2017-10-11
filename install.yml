@@ -1,5 +1,8 @@
 - hosts: all
   roles:
   - { role: roles/priority }
+  - { role: roles/system76 }
   - { role: roles/ssh }
   - { role: roles/intellij }
+  - { role: roles/enpass }
+  - { role: roles/vim }

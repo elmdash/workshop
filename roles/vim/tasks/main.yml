@@ -1,0 +1,4 @@
+- name: "VIM | Installing package"
+  become: true
+  apt:
+    name: vim
