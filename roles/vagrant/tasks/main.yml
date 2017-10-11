@@ -1,19 +1,8 @@
-- name: "VAGRANT | Creating temp file"
-  tempfile:
-    state: file
-  register: vagrant_releases
-
-- name: "VAGRANT | Downloading releases"
-  get_url:
-    url: https://releases.hashicorp.com/vagrant
-    dest: "{{ vagrant_releases.path }}"
-    force: true
-
-- name: "VAGRANT | Parsing releases"
-  command: bash -c "cat {{ vagrant_releases.path }} | grep -o '/vagrant/\([0-9.]\+\)' | head -n1 | grep -o [0-9.]*"
-  register: vagrant_parsed_release
+- name: "VAGRANT | Determining latest release URL"
+  script: latest.sh
+  register: vagrant_release
 
 - name: "VAGRANT | Installing package"
   become: true
   apt:
-    deb: https://releases.hashicorp.com/vagrant/{{ vagrant_parsed_release.stdout }}/vagrant_{{ vagrant_parsed_release.stdout }}_x86_64.deb
+    deb: "{{ vagrant_release.stdout_lines.0 }}"
