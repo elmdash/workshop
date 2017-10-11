@@ -6,3 +6,4 @@
   - { role: roles/intellij }
   - { role: roles/enpass }
   - { role: roles/vim }
+  - { role: roles/vagrant }
