@@ -7,3 +7,4 @@
   - { role: roles/enpass }
   - { role: roles/vim }
   - { role: roles/vagrant }
+  - { role: roles/dropbox }
