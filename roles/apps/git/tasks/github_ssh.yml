@@ -1,9 +1,9 @@
-- name: "GITHUB | Create github ssh directory"
-  file: 
+- name: "GIT | Create github ssh directory"
+  file:
     path: "{{ ansible_env.HOME }}/.ssh/github"
     state: directory
 
-- name: "GITHUB | Install github ssh keys"
+- name: "GIT | Install github ssh keys"
   become: true
   copy:
     dest: "{{ ansible_env.HOME }}/.ssh/github/{{ item.file }}"
@@ -11,19 +11,19 @@
     mode: u=rw,g=,o=
     owner: "{{ ansible_user_id }}"
     group: "{{ ansible_user_id }}"
-  with_items: 
+  with_items:
     - file: id_rsa
-      content: "{{ ssh_private_key }}"
+      content: "{{ github_ssh.private }}"
     - file: id_rsa.pub
-      content: "{{ ssh_public_key }}"
+      content: "{{ github_ssh.public }}"
 
-- name: "GITHUB | Updating ssh config to use github keys"
+- name: "GIT | Updating ssh config to use github keys"
   blockinfile:
     dest: "{{ ansible_env.HOME }}/.ssh/config"
     create: true
     block: |
       Host github.com
-          IdentityFile {{ ansible_env.HOME }}/.ssh/github/id_rsa  
+          IdentityFile {{ ansible_env.HOME }}/.ssh/github/id_rsa
     marker: "# {mark} ANSIBLE: github"
 
 

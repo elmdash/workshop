@@ -1,0 +1,11 @@
+git_config:
+  name: Peter Sooley
+  email: psoots@gmail.com
+
+github_config:
+  user: psoots
+  token: "{{ vault_github_oauth_token }}"
+
+github_ssh:
+  private: "{{ vault_github_ssh_private_key }}"
+  public: "{{ vault_github_ssh_public_key }}"
