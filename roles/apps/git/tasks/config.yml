@@ -37,6 +37,9 @@
   - name: alias.s
     value: status
 
+  - name: alias.d
+    value: diff
+
   - name: alias.cm
     value: commit -m
 

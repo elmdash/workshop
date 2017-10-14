@@ -1,2 +1,8 @@
 - include: config.yml
 - include: github_ssh.yml
+
+- name: "GIT | Setting up git alias"
+  lineinfile:
+    line: alias g='git'
+    path: "{{ ansible_env.HOME }}/.bash_aliases"
+    create: true
