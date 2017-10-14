@@ -1,0 +1,2 @@
+[home-secure]
+localhost           ansible_connection=local
