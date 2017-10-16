@@ -1,0 +1,23 @@
+- name: "TERMINAL | Creating profiles"
+  dconf:
+    key: /org/gnome/terminal/legacy/profiles:/list
+    value: "{{ terminal_profiles_list }}"
+
+- name: "TERMINAL | Setting profile names"
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/:{{ item.0.uuid }}/{{ item.1.key }}"
+    value: "{{ item.1.value }}"
+  with_subelements:
+    - "{{ terminal_profiles }}"
+    - settings
+
+- name: "TERMINAL | Setting default profile"
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/default"
+    value: "'{{ terminal_default_profile }}'"
+
+- name: "TERMINAL | Applying keybindings"
+  dconf:
+    key: "/org/gnome/terminal/legacy/keybindings/{{ item.key }}"
+    value: "{{ item.value }}"
+  with_items: "{{ terminal_keybindings }}"

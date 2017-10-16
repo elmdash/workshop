@@ -1,0 +1,11 @@
+- name: "SETTINGS | Keyboard settings"
+  dconf:
+    key: "/org/gnome/desktop/peripherals/keyboard/{{ item.key }}"
+    value: "{{ item.value }}"
+  with_items:
+  - key: repeat-interval
+    value: uint32 20
+  - key: repeat
+    value: "true"
+  - key: delay
+    value: uint32 354
