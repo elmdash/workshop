@@ -21,3 +21,11 @@
     key: "/org/gnome/terminal/legacy/keybindings/{{ item.key }}"
     value: "{{ item.value }}"
   with_items: "{{ terminal_keybindings }}"
+
+- name: "TERMINAL | Setting vim as default editor"
+  blockinfile:
+    block: |
+      export VISUAL=vim
+      export EDITOR="$VISUAL"
+    dest: "{{ ansible_env.HOME }}/.bashrc"
+    marker: "# {mark} ANIBLE MANAGED BLOCK: EDITOR"
