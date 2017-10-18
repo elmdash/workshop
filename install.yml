@@ -8,5 +8,6 @@
   - role: roles/apps/vagrant
   - role: roles/apps/vim
   - role: roles/apps/git
+  - role: roles/apps/chrome
   - role: roles/env/fonts
   - role: roles/env/settings
