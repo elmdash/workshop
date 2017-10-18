@@ -1,11 +1,29 @@
-- name: "SETTINGS | Keyboard settings"
-  dconf:
-    key: "/org/gnome/desktop/peripherals/keyboard/{{ item.key }}"
-    value: "{{ item.value }}"
+# http://catern.com/2014/12/21/plain-text-configuration-gnome.html
+# https://unix.stackexchange.com/questions/199836/how-can-i-view-the-content-of-a-backup-of-the-dconf-database-file
+
+- name: "SETTINGS | Making sure dconf user dir exists"
+  file:
+    path: "{{ ansible_env.HOME }}/.config/dconf/user.d"
+    state: directory
+
+- name: "SETTINGS | Installing settings conf files in ~/.config/dconf/user.d"
+  copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.config/dconf/user.d/{{ item }}"
   with_items:
-  - key: repeat-interval
-    value: uint32 20
-  - key: repeat
-    value: "true"
-  - key: delay
-    value: uint32 354
+  - keyboard.conf
+  - terminal.conf
+
+- name: "SETTINGS | Saving settings conf files from ~/.config/dconf/user.d"
+  command: dconf load / < {{ ansible_env.HOME }}/.config/dconf/user.d/{{ item }}
+  with_items:
+  - keyboard.conf
+  - terminal.conf
+
+- name: "SETTINGS | Setting vim as default editor"
+  blockinfile:
+    block: |
+      export VISUAL=vim
+      export EDITOR="$VISUAL"
+    dest: "{{ ansible_env.HOME }}/.bashrc"
+    marker: "# {mark} ANIBLE MANAGED BLOCK: EDITOR"
