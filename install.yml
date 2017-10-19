@@ -2,12 +2,13 @@
   roles:
   - role: roles/system/priority
   - role: roles/system/system76
+  - role: roles/apps/chrome
   - role: roles/apps/dropbox
   - role: roles/apps/enpass
+  - role: roles/apps/git
   - role: roles/apps/intellij
+  - role: roles/apps/typora
   - role: roles/apps/vagrant
   - role: roles/apps/vim
-  - role: roles/apps/git
-  - role: roles/apps/chrome
   - role: roles/env/fonts
   - role: roles/env/settings
