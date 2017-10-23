@@ -1,0 +1,10 @@
+# ansible managed
+[Desktop Entry]
+Encoding=UTF-8
+Name=Telegram App
+Comment=Telegram messaging app
+Exec={{ telegram_location }}/Telegram/Telegram
+Icon={{ telegram_location }}/logo.png
+Terminal=false
+StartupNotify=true
+Type=Application

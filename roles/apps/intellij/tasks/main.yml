@@ -40,7 +40,7 @@
     intellij_location: "{{ ansible_env.HOME }}/Applications/intellij/{{ intellij_latest_download.stdout }}"
 
 - name: "INTELLIJ | Creating desktop file for intellij app"
+  become: true
   template:
     src: entry.desktop
     dest: /usr/share/applications/intellij.desktop
-  become: true
