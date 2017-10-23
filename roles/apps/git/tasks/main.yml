@@ -6,3 +6,8 @@
     line: alias g='git'
     path: "{{ ansible_env.HOME }}/.bash_aliases"
     create: true
+
+- name: "GIT | Updating remote source of workshop project"
+  command: git remote set-url origin git@github.com:elmdash/workshop.git
+  args:
+    chdir: "{{ ansible_env.HOME }}/Projects/ElmDash/workshop"
