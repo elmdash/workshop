@@ -65,7 +65,7 @@
     value: show-branch
 
   - name: alias.subdate
-    value: '"!git submodule update --init --recursive"'
+    value: '!git submodule update --init --recursive'
 
   - name: alias.mote
-    value: '"!git fetch --all && git show-branch $$(git rev-parse --abbrev-ref HEAD) origin/$$(git rev-parse --abbrev-ref HEAD)"'
+    value: '!git fetch --all && git show-branch $(git rev-parse --abbrev-ref HEAD) origin/$(git rev-parse --abbrev-ref HEAD)'
