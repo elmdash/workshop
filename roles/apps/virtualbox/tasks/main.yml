@@ -1,0 +1,7 @@
+- name: "VIRTUALBOX | Installing packages"
+  become: true
+  apt:
+    name: "{{ item }}"
+  with_items:
+  - virtualbox
+  - virtualbox-ext-pack

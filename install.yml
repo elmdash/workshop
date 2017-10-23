@@ -10,5 +10,6 @@
   - role: roles/apps/typora
   - role: roles/apps/vagrant
   - role: roles/apps/vim
+  - role: roles/apps/virtualbox
   - role: roles/env/fonts
   - role: roles/env/settings
