@@ -3,6 +3,7 @@
   apt_repository:
     repo: ppa:system76-dev/stable
     update_cache: true
+    filename: system76
 
 - name: "SYSTEM76 | Installing packages"
   become: true

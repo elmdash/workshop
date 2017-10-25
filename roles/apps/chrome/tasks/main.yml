@@ -8,6 +8,7 @@
   apt_repository:
     repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
     update_cache: true
+    filename: chrome
 
 - name: "CHROME | Installing chrome package"
   become: true

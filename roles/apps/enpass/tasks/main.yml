@@ -8,6 +8,7 @@
   apt_repository:
     repo: deb http://repo.sinew.in/ stable main
     update_cache: true
+    filename: enpass
 
 - name: "ENPASS | Installing package"
   become: true

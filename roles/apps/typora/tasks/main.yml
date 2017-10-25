@@ -9,6 +9,7 @@
   apt_repository:
     repo: deb https://typora.io ./linux/
     update_cache: true
+    filename: typora
 
 - name: "TYPORA | Installing package"
   become: true
