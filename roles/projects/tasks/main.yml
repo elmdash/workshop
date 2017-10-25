@@ -1,0 +1,9 @@
+- name: "PROJECTS | Cloning project repos"
+  git:
+    repo: "{{ item.repo }}"
+    dest: "{{ ansible_env.HOME }}/Projects/{{ item.dest }}"
+  with_items:
+  - repo: psoots@bitbucket.org:elmdash/flingbee-api.git
+    dest: ElmDash/flingbee-api
+  - repo: psoots@bitbucket.org:elmdash/flingbee-web.git
+    dest: ElmDash/flingbee-web
