@@ -13,3 +13,4 @@
   - role: roles/apps/virtualbox
   - role: roles/env/fonts
   - role: roles/env/settings
+  - role: roles/projects
