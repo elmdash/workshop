@@ -1,5 +1,6 @@
 - include: config.yml
 - include: github_ssh.yml
+- include: bitbucket_ssh.yml
 
 - name: "GIT | Setting up git alias"
   lineinfile:

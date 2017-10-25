@@ -9,3 +9,7 @@ github_config:
 github_ssh:
   private: "{{ vault_github_ssh_private_key }}"
   public: "{{ vault_github_ssh_public_key }}"
+
+bitbucket_ssh:
+  private: "{{ vault_bitbucket_ssh_private_key }}"
+  public: "{{ vault_bitbucket_ssh_public_key }}"
