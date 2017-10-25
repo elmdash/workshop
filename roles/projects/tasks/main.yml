@@ -7,3 +7,5 @@
     dest: ElmDash/flingbee-api
   - repo: psoots@bitbucket.org:elmdash/flingbee-web.git
     dest: ElmDash/flingbee-web
+  - repo: psoots@bitbucket.org:elmdash/mulch.git
+    dest: ElmDash/mulch
