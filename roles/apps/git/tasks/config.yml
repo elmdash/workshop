@@ -28,9 +28,6 @@
   - name: color.ui
     value: true
 
-  - name: format.pretty
-    value: online
-
   - name: alias.co
     value: checkout
 
@@ -56,7 +53,7 @@
     value: add
 
   - name: alias.l
-    value: log --oneline -n20
+    value: log --pretty --oneline -n20
 
   - name: alias.aa
     value: commit --amend
