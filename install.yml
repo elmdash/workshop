@@ -11,6 +11,7 @@
   - role: roles/apps/vagrant
   - role: roles/apps/vim
   - role: roles/apps/virtualbox
+  - role: roles/apps/nodejs
   - role: roles/env/fonts
   - role: roles/env/settings
   - role: roles/projects
