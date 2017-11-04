@@ -1,0 +1,27 @@
+- name: "DOCKER | Adding signing key"
+  become: true
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+
+- name: "DOCKER | Adding repo"
+  become: true
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu zesty stable
+    update_cache: true
+    filename: docker
+
+- name: "DOCKER | Installing package"
+  become: true
+  apt:
+    name: docker-ce
+
+- name: "DOCKER | Creating non-root group"
+  become: true
+  group:
+    name: docker
+
+#- name: "DOCKER | Adding you to docker group"
+#  become: true
+#  user:
+#    name: "{{ ansible_user_id }}"
+#    groups: docker

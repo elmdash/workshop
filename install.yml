@@ -3,6 +3,7 @@
   - role: roles/system/priority
   - role: roles/system/system76
   - role: roles/apps/chrome
+  - role: roles/apps/docker
   - role: roles/apps/dropbox
   - role: roles/apps/enpass
   - role: roles/apps/git
