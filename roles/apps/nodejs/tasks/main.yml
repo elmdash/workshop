@@ -6,7 +6,7 @@
 - name: "NODEJS | Adding apt repo"
   become: true
   apt_repository:
-    repo: deb https://deb.nodesource.com/node_8.x artful main
+    repo: deb https://deb.nodesource.com/node_8.x {{ ansible_distribution_release }} main
     update_cache: true
     filename: nodejs
 

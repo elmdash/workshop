@@ -6,7 +6,7 @@
 - name: "WINE | Adding apt repo"
   become: true
   apt_repository:
-    repo: deb https://dl.winehq.org/wine-builds/ubuntu/ artful main
+    repo: deb https://dl.winehq.org/wine-builds/ubuntu/ {{ ansible_distribution_release }} main
     update_cache: true
     filename: wine
 
