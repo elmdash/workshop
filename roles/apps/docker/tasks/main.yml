@@ -1,3 +1,13 @@
+- nmae: "DOCKER | Install required packages"
+  become: true
+  apt:
+    name: "{{ item }}"
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - software-properties-common
+
 - name: "DOCKER | Adding signing key"
   become: true
   apt_key:
