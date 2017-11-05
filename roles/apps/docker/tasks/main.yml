@@ -20,8 +20,6 @@
   group:
     name: docker
 
-#- name: "DOCKER | Adding you to docker group"
-#  become: true
-#  user:
-#    name: "{{ ansible_user_id }}"
-#    groups: docker
+- name: "DOCKER | Adding you to docker group"
+  become: true
+  command: usermod -aG docker {{ ansible_user_id }}
