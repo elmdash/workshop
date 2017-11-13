@@ -1,0 +1,11 @@
+- name: "JAVA | Installing packages"
+  become: true
+  apt:
+    name: default-jdk
+
+- name: "JAVA | Setting JAVA_HOME"
+  blockinfile:
+    block: |
+      export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+    dest: "{{ ansible_env.HOME }}/.bashrc"
+    marker: "# {mark} ANIBLE MANAGED BLOCK: JAVA_HOME"

@@ -1,5 +1,9 @@
 - hosts: all
   roles:
+  - role: roles/env/fonts
+  - role: roles/env/settings
+  - role: roles/lang/java
+  - role: roles/lang/nodejs
   - role: roles/system/priority
   - role: roles/system/system76
   - role: roles/apps/chrome
@@ -8,11 +12,9 @@
   - role: roles/apps/enpass
   - role: roles/apps/git
   - role: roles/apps/intellij
+  - role: roles/apps/java
   - role: roles/apps/typora
   - role: roles/apps/vagrant
   - role: roles/apps/vim
   - role: roles/apps/virtualbox
-  - role: roles/apps/nodejs
-  - role: roles/env/fonts
-  - role: roles/env/settings
   - role: roles/projects
