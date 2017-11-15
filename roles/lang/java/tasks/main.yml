@@ -1,7 +1,10 @@
 - name: "JAVA | Installing packages"
   become: true
   apt:
-    name: default-jdk
+    name: "{{ item }}"
+  with_items:
+  - default-jdk
+  - gradle
 
 - name: "JAVA | Setting JAVA_HOME"
   blockinfile:

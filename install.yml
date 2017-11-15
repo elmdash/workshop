@@ -12,7 +12,6 @@
   - role: roles/apps/enpass
   - role: roles/apps/git
   - role: roles/apps/intellij
-  - role: roles/apps/java
   - role: roles/apps/typora
   - role: roles/apps/vagrant
   - role: roles/apps/vim
