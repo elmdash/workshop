@@ -4,11 +4,24 @@
     name: "{{ item }}"
   with_items:
   - default-jdk
-  - gradle
+
+- name: "JAVA | Creating gradle dir"
+  become: true
+  file:
+    path: /opt/gradle
+    state: directory
+
+- name: "JAVA | Downloading gradle"
+  become: true
+  unarchive:
+    src: https://services.gradle.org/distributions/gradle-4.3.1-bin.zip
+    dest: /opt/gradle
+    remote_src: yes
 
 - name: "JAVA | Setting JAVA_HOME"
   blockinfile:
     block: |
       export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+      export PATH="$PATH:/opt/gradle/gradle-4.3.1/bin"
     dest: "{{ ansible_env.HOME }}/.bashrc"
-    marker: "# {mark} ANIBLE MANAGED BLOCK: JAVA_HOME"
+    marker: "# {mark} ANIBLE MANAGED BLOCK: JAVA"
