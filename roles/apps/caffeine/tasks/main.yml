@@ -1,0 +1,4 @@
+- name: "CAFFEINE | installing"
+  become: true
+  apt:
+    name: caffeine

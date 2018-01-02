@@ -1,11 +1,11 @@
 - hosts: all
   roles:
+  - role: roles/system/priority
+  - role: roles/system/system76
   - role: roles/env/fonts
   - role: roles/env/settings
   - role: roles/lang/java
   - role: roles/lang/nodejs
-  - role: roles/system/priority
-  - role: roles/system/system76
   - role: roles/apps/chrome
   - role: roles/apps/docker
   - role: roles/apps/dropbox
