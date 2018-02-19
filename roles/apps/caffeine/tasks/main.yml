@@ -1,4 +1,12 @@
-- name: "CAFFEINE | installing"
-  become: true
-  apt:
-    name: caffeine
+# CAFFEINE doesn't really work in 17.10
+#- name: "CAFFEINE | Adding repo"
+#  become: true
+#  apt_repository:
+#    repo: ppa:caffeine-developers/ppa
+#    update_cache: true
+#    filename: caffeine
+#
+#- name: "CAFFEINE | installing"
+#  become: true
+#  apt:
+#    name: caffeine
