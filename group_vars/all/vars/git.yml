@@ -13,3 +13,7 @@ github_ssh:
 bitbucket_ssh:
   private: "{{ vault_bitbucket_ssh_private_key }}"
   public: "{{ vault_bitbucket_ssh_public_key }}"
+
+gitlab_ssh:
+  private: "{{ vault_gitlab_ssh_private_key }}"
+  public: "{{ vault_gitlab_ssh_public_key }}"
