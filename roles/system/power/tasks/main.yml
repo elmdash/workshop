@@ -1,0 +1,16 @@
+- name: "POWER | Adding TLP repo"
+  become: true
+  apt_repository:
+    repo: ppa:linrunner/tlp
+    update_cache: true
+    filename: tlp
+
+- name: "POWER | Installing TLP"
+  become: true
+  apt:
+    name: tlp
+
+- name: "POWER | Installing powertop"
+  become: true
+  apt:
+    name: powertop

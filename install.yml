@@ -2,6 +2,7 @@
   roles:
   - role: roles/system/priority
   - role: roles/system/system76
+  - role: roles/system/power
   - role: roles/env/fonts
   - role: roles/env/settings
   - role: roles/lang/java
