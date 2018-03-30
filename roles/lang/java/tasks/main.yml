@@ -25,3 +25,24 @@
       export PATH="$PATH:/opt/gradle/gradle-4.3.1/bin"
     dest: "{{ ansible_env.HOME }}/.bashrc"
     marker: "# {mark} ANIBLE MANAGED BLOCK: JAVA"
+
+- name: "JAVA | Adding sbt signing key"
+  become: true
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+
+- name: "JAVA | Adding sbt repo"
+  become: true
+  apt_repository:
+    repo: deb https://dl.bintray.com/sbt/debian /
+    update_cache: true
+    filename: sbt
+
+- name: "JAVA | Installing sbt & maven packages"
+  become: true
+  apt:
+    name: "{{ item }}"
+  with_items:
+    - sbt
+    - maven
