@@ -24,7 +24,7 @@
       export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
       export PATH="$PATH:/opt/gradle/gradle-4.3.1/bin"
     dest: "{{ ansible_env.HOME }}/.bashrc"
-    marker: "# {mark} ANIBLE MANAGED BLOCK: JAVA"
+    marker: "# {mark} ANSIBLE MANAGED BLOCK: JAVA"
 
 - name: "JAVA | Adding sbt signing key"
   become: true
