@@ -26,4 +26,4 @@
       export VISUAL=vim
       export EDITOR="$VISUAL"
     dest: "{{ ansible_env.HOME }}/.bashrc"
-    marker: "# {mark} ANIBLE MANAGED BLOCK: EDITOR"
+    marker: "# {mark} ANSIBLE MANAGED BLOCK: EDITOR"

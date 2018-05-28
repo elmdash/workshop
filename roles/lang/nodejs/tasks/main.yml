@@ -1,19 +1,32 @@
-- name: "NODEJS | Adding apt key"
-  become: true
-  apt_key:
-    url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
-
-- name: "NODEJS | Adding apt repo"
-  become: true
-  apt_repository:
-    repo: deb https://deb.nodesource.com/node_8.x {{ ansible_distribution_release }} main
-    update_cache: true
-    filename: nodejs
-
-- name: "NODEJS | Installing packages"
+- name: "NODEJS | Install nodejs pre-reqs"
   become: true
   apt:
     name: "{{ item }}"
   with_items:
   - apt-transport-https
-  - nodejs
+
+- name: "NODEJS | Cloning nodenv git project"
+  git:
+    repo: https://github.com/nodenv/nodenv.git
+    dest: "{{ ansible_env.HOME }}/.nodenv"
+  register: nodenv_project
+
+- name: "NODEJS | Optimizing nodenv"
+  command: src/configure && make -c src
+  args:
+    chdir: "{{ ansible_env.HOME }}/.nodenv"
+  ignore_errors: yes
+  when: nodenv_project.changed
+
+- name: "NODEJS | Updating .bashrc with nodenv hooks"
+  blockinfile:
+    block: |
+      export PATH="$HOME/.nodenv/bin:$PATH"
+      eval "$(nodenv init -)"
+    dest: "{{ ansible_env.HOME }}/.bashrc"
+    marker: "# {mark} ANSIBLE MANAGED BLOCK: NODEJS"
+
+- name: "NODEJS | Cloning node-build as nodenv plugin"
+  git:
+    repo: https://github.com/nodenv/node-build.git
+    dest: "{{ ansible_env.HOME }}/.nodenv/plugins/node-build"
