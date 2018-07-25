@@ -34,13 +34,24 @@
   become: true
   command: usermod -aG docker {{ ansible_user_id }}
 
-- name: "DOCKER | Getting latest compose version"
+- name: "DOCKER | Getting latest docker-compose version"
   script: latest-compose.sh
   register: compose_release
 
-- name: "DOCKER | Downloading latest compose"
+- name: "DOCKER | Downloading latest docker-compose"
   become: true
   get_url:
     url: "{{ compose_release.stdout_lines.0 }}"
     dest: /usr/local/bin/docker-compose
+    mode: u+x,o+x,g+x
+
+- name: "DOCKER | Getting latest docker-machine version"
+  script: latest-machine.sh
+  register: machine_release
+
+- name: "DOCKER | Downloading latest docker-machine"
+  become: true
+  get_url:
+    url: "{{ machine_release.stdout_lines.0 }}"
+    dest: /usr/local/bin/docker-machine
     mode: u+x,o+x,g+x
