@@ -44,6 +44,7 @@
     url: "{{ compose_release.stdout_lines.0 }}"
     dest: /usr/local/bin/docker-compose
     mode: u+x,o+x,g+x
+    force: yes
 
 - name: "DOCKER | Getting latest docker-machine version"
   script: latest-machine.sh
@@ -55,3 +56,4 @@
     url: "{{ machine_release.stdout_lines.0 }}"
     dest: /usr/local/bin/docker-machine
     mode: u+x,o+x,g+x
+    force: yes
