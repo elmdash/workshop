@@ -1,23 +1,30 @@
 - hosts: all
   roles:
-  - role: roles/system/priority
-  - role: roles/system/system76
-  - role: roles/system/power
-  - role: roles/system/utilities
-  - role: roles/env/fonts
-  - role: roles/env/settings
-  - role: roles/lang/java
-  - role: roles/lang/nodejs
-  - role: roles/apps/dbeaver
-  - role: roles/apps/chrome
-  - role: roles/apps/docker
-  - role: roles/apps/dropbox
-  - role: roles/apps/enpass
-  - role: roles/apps/git
-  - role: roles/apps/intellij
-  - role: roles/apps/kubernetes
-  - role: roles/apps/typora
-  - role: roles/apps/vagrant
-  - role: roles/apps/vim
-  - role: roles/apps/virtualbox
-  - role: roles/projects
+
+  - { role: roles/system/priority,   tags: ["system", "priority"] }
+  - { role: roles/system/system76,   tags: ["system", "system76"] }
+  - { role: roles/system/power,      tags: ["system", "power"] }
+
+  - { role: roles/env/fonts,         tags: ["env", "fonts" ] }
+  - { role: roles/env/settings,      tags: ["env", "settings" ] }
+
+  - { role: roles/lang/java,         tags: ["lang", "java"] }
+  - { role: roles/lang/nodejs,       tags: ["lang", "nodejs"] }
+
+  - { role: roles/apps/chrome,       tags: ["apps", "chrome"] }
+  - { role: roles/apps/dbeaver,      tags: ["apps", "dbeaver"] }
+  - { role: roles/apps/docker,       tags: ["apps", "docker"] }
+  - { role: roles/apps/dropbox,      tags: ["apps", "dropbox"] }
+  - { role: roles/apps/enpass,       tags: ["apps", "enpass"] }
+  - { role: roles/apps/firefox,      tags: ["apps", "firefox"] }
+  - { role: roles/apps/git,          tags: ["apps", "git"] }
+  - { role: roles/apps/intellij,     tags: ["apps", "intellij"] }
+  - { role: roles/apps/kubernetes,   tags: ["apps", "kubernetes"] }
+  - { role: roles/apps/spotify,      tags: ["apps", "spotify"] }
+  - { role: roles/apps/telegram,     tags: ["apps", "telegram"] }
+  - { role: roles/apps/tree,         tags: ["apps", "tree"] }
+  - { role: roles/apps/typora,       tags: ["apps", "typora"] }
+  - { role: roles/apps/vagrant,      tags: ["apps", "vagrant"] }
+  - { role: roles/apps/vim,          tags: ["apps", "vim"] }
+  - { role: roles/apps/virtualbox,   tags: ["apps", "virtualbox"] }
+  - { role: roles/apps/wine,         tags: ["apps", "wine"] }

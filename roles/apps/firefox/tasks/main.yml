@@ -1,0 +1,11 @@
+- name: "FIREFOX | Adding repo"
+  become: true
+  apt_repository:
+    repo: ppa:ubuntu-mozilla-security/ppa
+    update_cache: true
+    filename: firefox
+
+- name: "FIREFOX | Installing package"
+  become: true
+  apt:
+    name: firefox

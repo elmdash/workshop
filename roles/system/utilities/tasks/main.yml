@@ -1,4 +1,0 @@
-- name: "UTILITIES: Installing tree"
-  become: true
-  apt:
-    name: tree
