@@ -1,0 +1,4 @@
+- name: "GNOME TWEAKS | Installing package"
+  become: true
+  apt:
+    name: gnome-tweak-tool

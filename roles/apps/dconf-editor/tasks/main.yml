@@ -1,0 +1,4 @@
+- name: "DCONF EDITOR | Installing package"
+  become: true
+  apt:
+    name: dconf-editor

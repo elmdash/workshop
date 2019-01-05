@@ -13,11 +13,13 @@
 
   - { role: roles/apps/chrome,       tags: ["apps", "chrome"] }
   - { role: roles/apps/dbeaver,      tags: ["apps", "dbeaver"] }
+  - { role: roles/apps/dconf-editor, tags: ["apps", "dconf-editor"] }
   - { role: roles/apps/docker,       tags: ["apps", "docker"] }
   - { role: roles/apps/dropbox,      tags: ["apps", "dropbox"] }
   - { role: roles/apps/enpass,       tags: ["apps", "enpass"] }
   - { role: roles/apps/firefox,      tags: ["apps", "firefox"] }
   - { role: roles/apps/git,          tags: ["apps", "git"] }
+  - { role: roles/apps/gnome-tweaks, tags: ["apps", "gnome-tweaks"] }
   - { role: roles/apps/intellij,     tags: ["apps", "intellij"] }
   - { role: roles/apps/kubernetes,   tags: ["apps", "kubernetes"] }
   - { role: roles/apps/spotify,      tags: ["apps", "spotify"] }
