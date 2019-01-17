@@ -1,0 +1,8 @@
+- name: "CLOJURE | Install pre-requisites"
+  apt:
+    name: rlwrap
+  become: true
+
+#- name: "CLOJURE | Run pre-downloaded installer script"
+#  script: linux-install-1.10.0.411.sh
+#  become: true

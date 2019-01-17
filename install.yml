@@ -8,6 +8,7 @@
   - { role: roles/env/fonts,         tags: ["env", "fonts" ] }
   - { role: roles/env/settings,      tags: ["env", "settings" ] }
 
+  - { role: roles/lang/clojure,      tags: ["lang", "clojure"] }
   - { role: roles/lang/java,         tags: ["lang", "java"] }
   - { role: roles/lang/nodejs,       tags: ["lang", "nodejs"] }
 
