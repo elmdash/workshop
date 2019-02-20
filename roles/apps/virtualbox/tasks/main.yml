@@ -5,4 +5,3 @@
   with_items:
   - virtualbox
   - virtualbox-ext-pack
-  - virtualbox-dkms
