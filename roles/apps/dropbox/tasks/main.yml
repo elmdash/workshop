@@ -1,9 +1,9 @@
 - name: "DROPBOX | Installing python requirements"
   become: true
   apt:
-    name: python-gpgme
+    name: python-gpg
 
 - name: "DROPBOX | Installing installer package"
   become: true
   apt:
-    deb: https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb
+    deb: https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2019.01.31_amd64.deb
