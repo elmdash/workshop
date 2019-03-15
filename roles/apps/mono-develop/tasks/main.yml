@@ -1,0 +1,25 @@
+- name: "MONO-DEVELOP | Install pre-requisite packages"
+  become: true
+  apt:
+    name: '{{ item }}'
+  with_items:
+    - apt-transport-https
+    - dirmngr
+
+- name: "MONO-DEVELOP | Adding signing key"
+  become: true
+  apt_key:
+    keyserver: hkp://keyserver.ubuntu.com:80
+    id: 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+
+- name: "MONO-DEVELOP | Adding apt repo"
+  become: true
+  apt_repository:
+    repo: deb https://download.mono-project.com/repo/ubuntu vs-bionic main
+    update_cache: true
+    filename: monodevelop
+
+- name: "MONO-DEVELOP | Installing package"
+  become: true
+  apt:
+    name: monodevelop
