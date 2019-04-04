@@ -1,0 +1,9 @@
+- name: "RUST | Installing rustup"
+  script: rustup_install.sh -y
+
+- name: "RUST | Updating .bashrc PATH"
+  blockinfile:
+    block: |
+      export PATH="$HOME/.cargo/bin:$PATH"
+    dest: "{{ ansible_env.HOME }}/.bashrc"
+    marker: "# {mark} ANSIBLE MANAGED BLOCK: RUST"

@@ -11,6 +11,7 @@
   - { role: roles/lang/clojure,      tags: ["lang", "clojure"] }
   - { role: roles/lang/java,         tags: ["lang", "java"] }
   - { role: roles/lang/nodejs,       tags: ["lang", "nodejs"] }
+  - { role: roles/lang/rust,         tags: ["lang", "rust"] }
 
   - { role: roles/apps/chrome,       tags: ["apps", "chrome"] }
   - { role: roles/apps/dbeaver,      tags: ["apps", "dbeaver"] }
