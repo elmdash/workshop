@@ -1,0 +1,16 @@
+- name: "INSOMNIA | Adding signing key"
+  become: true
+  apt_key:
+    url: https://insomnia.rest/keys/debian-public.key.asc
+
+- name: "INSOMNIA | Adding repo"
+  become: true
+  apt_repository:
+    repo: deb https://dl.bintray.com/getinsomnia/Insomnia /
+    update_cache: true
+    filename: insomnia
+
+- name: "INSOMNIA | Installing package"
+  become: true
+  apt:
+    name: insomnia
