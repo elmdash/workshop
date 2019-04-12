@@ -1,0 +1,10 @@
+# ansible managed
+[Desktop Entry]
+Encoding=UTF-8
+Name=Thunderbird
+Comment=Thunderbird Mail Client
+Exec={{ thunderbird_location }}/thunderbird
+Icon={{ thunderbird_location }}/chrome/icons/default/default256.png
+Terminal=false
+StartupNotify=true
+Type=Application

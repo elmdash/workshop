@@ -28,6 +28,7 @@
   - { role: roles/apps/mono-develop, tags: ["apps", "mono-develop"] }
   - { role: roles/apps/spotify,      tags: ["apps", "spotify"] }
   - { role: roles/apps/telegram,     tags: ["apps", "telegram"] }
+  - { role: roles/apps/thunderbird,  tags: ["apps", "thunderbird"] }
   - { role: roles/apps/tree,         tags: ["apps", "tree"] }
   - { role: roles/apps/typora,       tags: ["apps", "typora"] }
   - { role: roles/apps/vagrant,      tags: ["apps", "vagrant"] }
