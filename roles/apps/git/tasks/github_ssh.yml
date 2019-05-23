@@ -24,4 +24,5 @@
     block: |
       Host github.com
           IdentityFile {{ ansible_env.HOME }}/.ssh/github/id_rsa
+          AddKeysToAgent yes
     marker: "# {mark} ANSIBLE: github"

@@ -24,4 +24,5 @@
     block: |
       Host bitbucket.org
           IdentityFile {{ ansible_env.HOME }}/.ssh/bitbucket/id_rsa
+          AddKeysToAgent yes
     marker: "# {mark} ANSIBLE: bitbucket"

@@ -24,4 +24,5 @@
     block: |
       Host gitlab.com
           IdentityFile {{ ansible_env.HOME }}/.ssh/gitlab/id_rsa
+          AddKeysToAgent yes
     marker: "# {mark} ANSIBLE: gitlab"
