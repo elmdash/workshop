@@ -1,0 +1,10 @@
+- name: "INKSCAPE | Adding repo"
+  become: true
+  apt_repository:
+    repo: ppa:inkscape.dev/stable
+    update_cache: true
+    filename: inkscape
+- name: "INKSCAPE | Installing package"
+  become: true
+  apt:
+    name: inkscape
