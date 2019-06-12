@@ -1,0 +1,4 @@
+- name: "MQTTBOX | Install latest from deb"
+  become: true
+  apt:
+    deb: https://s3-us-west-2.amazonaws.com/workswithweb/mqttbox/latest/linux/MQTTBox.deb

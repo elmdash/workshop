@@ -27,6 +27,7 @@
   - { role: roles/apps/intellij,     tags: ["apps", "intellij"] }
   - { role: roles/apps/kubernetes,   tags: ["apps", "kubernetes"] }
   - { role: roles/apps/mono-develop, tags: ["apps", "mono-develop"] }
+  - { role: roles/apps/mqttbox,      tags: ["apps", "mqttbox"] }
   - { role: roles/apps/slack,        tags: ["apps", "slack"] }
   - { role: roles/apps/spotify,      tags: ["apps", "spotify"] }
   - { role: roles/apps/telegram,     tags: ["apps", "telegram"] }
