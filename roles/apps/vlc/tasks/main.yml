@@ -1,0 +1,4 @@
+- name: "VLC | Installing package"
+  become: true
+  apt:
+    name: vlc

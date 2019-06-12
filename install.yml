@@ -36,4 +36,5 @@
   - { role: roles/apps/vagrant,      tags: ["apps", "vagrant"] }
   - { role: roles/apps/vim,          tags: ["apps", "vim"] }
   - { role: roles/apps/virtualbox,   tags: ["apps", "virtualbox"] }
+  - { role: roles/apps/vlc,          tags: ["apps", "vlc"] }
   - { role: roles/apps/wine,         tags: ["apps", "wine"] }
