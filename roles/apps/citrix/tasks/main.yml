@@ -1,0 +1,4 @@
+- name: 'CITRIX | Install citrix receiver (Web app 19.3.0.5)'
+  become: true
+  apt:
+    deb: https://downloads.citrix.com/15918/icaclientWeb_19.3.0.5_amd64.deb?__gda__=1557517029_86ff21c5992a12cf5a43d34f827fc4c5
