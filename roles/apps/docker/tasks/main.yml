@@ -16,7 +16,7 @@
 - name: "DOCKER | Adding repo"
   become: true
   apt_repository:
-    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu zesty stable
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu disco stable
     update_cache: true
     filename: docker
 
@@ -24,6 +24,7 @@
   become: true
   apt:
     name: docker-ce
+    state: latest
 
 - name: "DOCKER | Creating non-root group"
   become: true
