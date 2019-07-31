@@ -1,4 +1,10 @@
-- name: 'CITRIX | Install citrix receiver (Web app 19.3.0.5)'
+#- name: 'CITRIX | Install citrix receiver (Web app 19.3.0.5)'
+#  become: true
+#  apt:
+#    deb: https://downloads.citrix.com/15918/icaclientWeb_19.3.0.5_amd64.deb?__gda__=1557517029_86ff21c5992a12cf5a43d34f827fc4c5
+
+# THIS DOESN'T WORK BECAUSE THE DEB LINK IS DIFFERENT AFTER A WHILE
+- name: 'CITRIX | Install citrix receiver (Self-service app 13.10.0.20)'
   become: true
   apt:
-    deb: https://downloads.citrix.com/15918/icaclientWeb_19.3.0.5_amd64.deb?__gda__=1557517029_86ff21c5992a12cf5a43d34f827fc4c5
+    deb: https://downloads.citrix.com/14822/icaclient_13.10.0.20_amd64.deb?__gda__=1560528345_352e936fabf59577f892e24c54765c27
