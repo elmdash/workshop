@@ -58,3 +58,13 @@
     dest: /usr/local/bin/docker-machine
     mode: u+x,o+x,g+x
     force: yes
+
+- name: "DOCKER | Creating aliases"
+  lineinfile:
+    line: alias {{ item }}
+    path: "{{ ansible_env.HOME }}/.bash_aliases"
+    create: true
+  with_items:
+    - d='docker'
+    - dc='docker-compose'
+    - dm='docker-machine'
