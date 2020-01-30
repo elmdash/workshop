@@ -21,6 +21,7 @@
   - { role: roles/apps/docker,       tags: ["apps", "docker"] }
   - { role: roles/apps/dropbox,      tags: ["apps", "dropbox"] }
   - { role: roles/apps/enpass,       tags: ["apps", "enpass"] }
+  - { role: roles/apps/flameshot,    tags: ["apps", "flameshot"] }
   - { role: roles/apps/firefox,      tags: ["apps", "firefox"] }
   - { role: roles/apps/git,          tags: ["apps", "git"] }
   - { role: roles/apps/gnome-tweaks, tags: ["apps", "gnome-tweaks"] }
