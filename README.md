@@ -140,9 +140,11 @@ https://wiki.archlinux.org/index.php/Installation_guide
     passwd peter
     usermod -Ag wheel peter
     
-    nvim /etc/doas.conf
-    > permit persist keepenv :wheel
-    > permit nopass keepenv root
+    git clone https://github.com/elmdash/workshop
+    cd workshop
+    
+    cp doas.conf /etc/doas.conf
+    cp pam_environment.conf /home/peter/.pam_environment
     ```
 
     
