@@ -137,11 +137,13 @@ https://wiki.archlinux.org/index.php/Installation_guide
       fish \
       neovim \
       opendoas \
+      xorg-server \
       xorg-xinit \
       xmonad \
       xmonad-contrib \ 
       man-db \
-      which
+      which \
+      alacritty
     
     # create primary user
     useradd -m peter -s /usr/bin/fish
@@ -159,6 +161,8 @@ https://wiki.archlinux.org/index.php/Installation_guide
     cp reflector.conf /etc/xdg/reflector/reflector.conf
     cp pam_environment.conf /home/peter/.pam_environment
     cp fish.conf /home/peter/.configs/fish/config.fish
+    mkdir /home/peter/.xmonad
+    cp xmonad.hs /home/peter/.xmonad/
     doas chown -R peter:peter /home/peter/.pam_environment
     
     # maintain freshest pacman repo mirrors
