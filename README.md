@@ -131,20 +131,39 @@ https://wiki.archlinux.org/index.php/Installation_guide
 20. Bootstrap
 
     ```
-    pacman -S git reflector fish neovim opendoas
+    pacman -S \
+      git \
+      reflector \
+      fish \
+      neovim \
+      opendoas \
+      xorg-xinit \
+      xmonad \
+      xmonad-contrib \ 
+      man-db \
+      which
     
-    # maintain freshest pacman repo mirrors
-    systemctl enable reflector
-    
+    # create primary user
     useradd -m peter -s /usr/bin/fish
     passwd peter
     usermod -Ag wheel peter
     
+    # don't need bash
+    cd ~
+    rm -rf .bash*
+    
+    # add some sensible configs
     git clone https://github.com/elmdash/workshop
     cd workshop
-    
     cp doas.conf /etc/doas.conf
+    cp reflector.conf /etc/xdg/reflector/reflector.conf
     cp pam_environment.conf /home/peter/.pam_environment
+    cp fish.conf /home/peter/.configs/fish/config.fish
+    doas chown -R peter:peter /home/peter/.pam_environment
+    
+    # maintain freshest pacman repo mirrors
+    systemctl enable reflector
+    systemctl enable reflector.timer
     ```
 
     
