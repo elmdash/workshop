@@ -1,15 +1,17 @@
 #!/usr/bin/env bash
 
-# configure some git stuff
-git config pull.ff only
-
 # maintain fresh pacman repositories mirror list 
-pacman -S reflector
+pacman -S --needed reflector
 systemctl enable reflector
 
 # use fish as default shell
-pacman -S fish
+pacman -S --needed fish
+
+# setup sudo
+pacman -S --needed sudo
 
 # create user
 useradd -m peter -s /usr/bin/fish
 passwd peter
+
+
