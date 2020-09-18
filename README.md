@@ -131,10 +131,18 @@ https://wiki.archlinux.org/index.php/Installation_guide
 20. Bootstrap
 
     ```
-    pacman -S git
-    git clone https://github.com/elmdash/workshop.git
-    cd workshop
-    ./bootstrap.sh
+    pacman -S git reflector fish neovim opendoas
+    
+    # maintain freshest pacman repo mirrors
+    systemctl enable reflector
+    
+    useradd -m peter -s /usr/bin/fish
+    passwd peter
+    usermod -Ag wheel peter
+    
+    nvim /etc/doas.conf
+    > permit persist keepenv :wheel
+    > permit nopass keepenv root
     ```
 
     
