@@ -1,4 +1,0 @@
-- name: "FONTS | Installing fira code"
-  become: true
-  apt:
-    name: fonts-firacode

@@ -1,4 +1,0 @@
-- name: "TREE | Installing package"
-  become: true
-  apt:
-    name: tree

@@ -1,1 +1,0 @@
-Unfortunately there's no easy way to get the latest release version.

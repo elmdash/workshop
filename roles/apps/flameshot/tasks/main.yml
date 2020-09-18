@@ -1,7 +1,0 @@
-- name: "FLAMESHOT | Install from deb"
-  become: true
-  apt:
-    name: flameshot
-
-# todo set keyboard shortcut
-# https://askubuntu.com/questions/1036473/ubuntu-18-how-to-change-screenshot-application-to-flameshot

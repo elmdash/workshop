@@ -1,8 +1,0 @@
-- name: "VAGRANT | Determining latest release URL"
-  script: latest.sh
-  register: vagrant_release
-
-- name: "VAGRANT | Installing package"
-  become: true
-  apt:
-    deb: "{{ vagrant_release.stdout_lines.0 }}"
