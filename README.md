@@ -109,7 +109,14 @@ https://wiki.archlinux.org/index.php/Installation_guide
     grub-mkconfig -o /boot/grub/grub.cfg
     ```
 
-16. Exit
+16. Networking
+
+    ```
+    pacman -S dhcpcd
+    systemctl enable dhcpcd
+    ```
+
+17. Exit
 
     ```
     exit
@@ -117,8 +124,33 @@ https://wiki.archlinux.org/index.php/Installation_guide
     shutdown now
     ```
 
-17. Remove `iso`
+18. Eject `iso`
 
-18. Boot
+19. Boot
+
+20. Bootstrap
+
+    ```
+    pacman -S git
+    git clone https://github.com/elmdash/workshop.git
+    cd workshop
+    ./bootstrap.sh
+    ```
 
     
+
+---
+
+Recovery
+
+1. Boot from `iso`
+
+2. Mount dirs & chroot
+
+   ```
+   mount /dev/sda3 /mnt
+   swapon /dev/sda2
+   arch-chroot /mnt
+   ```
+
+   
