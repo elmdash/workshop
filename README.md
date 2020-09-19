@@ -143,7 +143,17 @@ https://wiki.archlinux.org/index.php/Installation_guide
       xmonad-contrib \ 
       man-db \
       which \
-      alacritty
+      alacritty \
+      ttf-fira-code \
+      noto-fonts \ # option needed for firefox
+      firefox-developer-edition \
+      alsa-utils
+      
+    # virtualbox only
+    pacman -S virtualbox-guest-utils
+    systemctl start vboxservice
+    systemctl enable vboxservice
+    VBoxClient-all
     
     # create primary user
     useradd -m peter -s /usr/bin/fish

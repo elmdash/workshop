@@ -1,6 +1,7 @@
 import XMonad
+import XMonad.Config.Desktop
 
-main = xmonad def
+main = xmonad desktopConfig
     { terminal    = "alacritty"
     , modMask     = mod4Mask
     , borderWidth = 3
