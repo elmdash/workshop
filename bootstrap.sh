@@ -8,7 +8,13 @@ is_installed () {
 install_git () {
   if [! is_installed 'git']; then
     pacman -S --noconfirm git
-  elif
+  else
     echo "git already installed"
   fi
 }
+
+hello () {
+  echo "hello"
+}
+
+hello
