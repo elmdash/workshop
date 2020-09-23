@@ -1,17 +1,6 @@
 #!/usr/bin/env bash
 
-source lib/vars.sh
-
-is_git_installed () {
-	pacman -Qi git &> /dev/null
-	return $?
-}
-
-require_git () {
-	if ! is_git_installed; then
-		doas pacman -S --needed --noconfirm git
-	fi
-}
+source $WORKSHOP_DIR/lib/funcs.sh
 
 configure_git () {
 	git config --global user.email "peter.sooley@gmail.com"
@@ -43,6 +32,6 @@ add_git_aliases () {
 EOF
 }
 
-require_git
+require_pkg git
 configure_git
 add_git_aliases
