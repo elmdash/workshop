@@ -7,6 +7,26 @@ cd $WORKSHOP_DIR
 source lib/funcs.sh
 
 
+#### ENVIRONMENT
+#########################################################
+cp confs/.pam_enviroment ~/.pam_environment
+
+
+#### UTILS
+#########################################################
+
+require_pkg man-db
+require_pkg which
+require_pkg alsa-utils
+
+
+#### FIREFOX
+#########################################################
+
+require_pkg noto-fonts # optoinal font choice, could be something else
+require_pkg firefox-developer-edition
+
+
 #### GIT
 #########################################################
 
@@ -40,3 +60,10 @@ git config --global alias.mote '!git fetch --all && git show-branch $(git rev-pa
 # alacritty wont start unless at least one font exists on the system
 require_pkg ttf-fira-code
 require_pkg alacritty
+
+
+#### NEOVIM
+#########################################################
+
+require_pkg neovim
+
