@@ -9,7 +9,7 @@ source lib/funcs.sh
 
 #### ENVIRONMENT
 #########################################################
-cp confs/.pam_enviroment ~/.pam_environment
+cp confs/.pam_environment ~/.pam_environment
 
 
 #### UTILS
