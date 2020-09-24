@@ -131,57 +131,9 @@ https://wiki.archlinux.org/index.php/Installation_guide
 20. Bootstrap
 
     ```
-    pacman -S \
-      git \
-      reflector \
-      fish \
-      neovim \
-      opendoas \
-      xorg-server \
-      xorg-xinit \
-      xmonad \
-      xmonad-contrib \ 
-      man-db \
-      which \
-      alacritty \
-      ttf-fira-code \
-      noto-fonts \ # option needed for firefox
-      firefox-developer-edition \
-      alsa-utils \
-      openssh
-      
-    # virtualbox only
-    pacman -S virtualbox-guest-utils
-    systemctl start vboxservice
-    systemctl enable vboxservice
-    VBoxClient-all
-    
-    # create primary user
-    useradd -m peter -s /usr/bin/fish
-    passwd peter
-    usermod -Ag wheel peter
-    
-    # don't need bash
-    cd ~
-    rm -rf .bash*
-    
-    # add some sensible configs
-    git clone https://github.com/elmdash/workshop
-    cd workshop
-    cp doas.conf /etc/doas.conf
-    cp reflector.conf /etc/xdg/reflector/reflector.conf
-    cp pam_environment.conf /home/peter/.pam_environment
-    cp fish.conf /home/peter/.configs/fish/config.fish
-    mkdir /home/peter/.xmonad
-    cp xmonad.hs /home/peter/.xmonad/
-    doas chown -R peter:peter /home/peter/.pam_environment
-    
-    # maintain freshest pacman repo mirrors
-    systemctl enable reflector
-    systemctl enable reflector.timer
-    ```
+    # Login (as root)
 
-    
+    ```
 
 ---
 
