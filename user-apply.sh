@@ -20,6 +20,26 @@ require_pkg which
 require_pkg alsa-utils
 
 
+#### SSH
+#########################################################
+
+if [ ! -f ~/.ssh/github/id_rsa ]; then
+	echo "Generating SSH key for github"
+	ssh-keygen -t rsa -b 4096 -C "peter.sooley@gmail.com" -f ~/.ssh/github/id_rsa
+fi
+
+if [ ! -f ~/.ssh/gitlab/id_rsa ]; then
+	echo "Generating SSH key for gitlab"
+	ssh-keygen -t rsa -b 4096 -C "peter.sooley@gmail.com" -f ~/.ssh/gitlab/id_rsa
+fi
+
+if [ ! -f ~/.ssh/bitbucket/id_rsa ]; then
+	echo "Generating SSH key for bitbucket"
+	ssh-keygen -t rsa -b 4096 -C "peter.sooley@gmail.com" -f ~/.ssh/bitbucket/id_rsa
+fi
+
+cp confs/ssh.config ~/.ssh/config
+
 #### FIREFOX
 #########################################################
 
