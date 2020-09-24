@@ -35,7 +35,6 @@ usermod -aG wheel peter
 # copy these configs in since they're needed to start X
 mkdir -p /home/peter/.configs/fish
 cp confs/config.fish /home/peter/.configs/fish/config.fish
-chown -R peter:peter /home/peter
 rm -rf /home/peter/.bash*
 
 # xmonad needs a default terminal, we're going to install that now
@@ -45,7 +44,7 @@ require_root_pkg alacritty
 # other user configs are created when logged in as peter
 
 
-#### XMONAD
+#### X GUI
 #########################################################
 
 require_root_pkg xorg-server
@@ -54,4 +53,8 @@ require_root_pkg xmonad
 require_root_pkg xmonad-contrib
 mkdir /home/peter/.xmonad
 cp confs/xmonad.hs /home/peter/.xmonad/
-chown -R peter:peter /home/peter/.xmonad
+cp confs/xinitrc /home/peter/.xinitrc
+
+#### HOME PERMISSIONS
+#########################################################
+chown -R peter:peter /home/peter

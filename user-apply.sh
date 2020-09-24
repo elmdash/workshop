@@ -9,7 +9,7 @@ source lib/funcs.sh
 
 #### ENVIRONMENT
 #########################################################
-cp confs/.pam_environment ~/.pam_environment
+cp confs/pam_environment ~/.pam_environment
 
 
 #### UTILS
@@ -33,7 +33,7 @@ if [ ! -f ~/.ssh/gitlab_rsa ]; then
 	ssh-keygen -t rsa -b 4096 -C "peter.sooley@gmail.com" -f ~/.ssh/gitlab_rsa
 fi
 
-if [ ! -f /.ssh/bitbucket_rsa ]; then
+if [ ! -f ~/.ssh/bitbucket_rsa ]; then
 	echo "Generating SSH key for bitbucket"
 	ssh-keygen -t rsa -b 4096 -C "peter.sooley@gmail.com" -f ~/.ssh/bitbucket_rsa
 fi
@@ -92,6 +92,16 @@ require_pkg neovim
 #########################################################
 
 require_pkg fish
-mkdir ~/.config/fish
+mkdir -p ~/.config/fish
 cp confs/config.fish ~/.config/fish/config.fish
+
+
+#### POLYBAR
+#########################################################
+
+require_pkg polybar
+mkdir -p ~/.config/polybar
+cp confs/polybar_launch.sh ~/.config/polybar/launch.sh
+cp confs/polybar.config ~/.config/polybar/config
+
 
