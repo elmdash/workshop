@@ -31,6 +31,8 @@ require_root_pkg fish
 useradd -m peter -s /usr/bin/fish
 passwd peter
 usermod -aG wheel peter
+
+# copy these configs in since they're needed to start X
 mkdir -p /home/peter/.configs/fish
 cp confs/config.fish /home/peter/.configs/fish/config.fish
 chown -R peter:peter /home/peter

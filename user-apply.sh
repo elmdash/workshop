@@ -23,19 +23,19 @@ require_pkg alsa-utils
 #### SSH
 #########################################################
 
-if [ ! -f ~/.ssh/github/id_rsa ]; then
+if [ ! -f ~/.ssh/github_rsa ]; then
 	echo "Generating SSH key for github"
-	ssh-keygen -t rsa -b 4096 -C "peter.sooley@gmail.com" -f ~/.ssh/github/id_rsa
+	ssh-keygen -t rsa -b 4096 -C "peter.sooley@gmail.com" -f ~/.ssh/github_rsa
 fi
 
-if [ ! -f ~/.ssh/gitlab/id_rsa ]; then
+if [ ! -f ~/.ssh/gitlab_rsa ]; then
 	echo "Generating SSH key for gitlab"
-	ssh-keygen -t rsa -b 4096 -C "peter.sooley@gmail.com" -f ~/.ssh/gitlab/id_rsa
+	ssh-keygen -t rsa -b 4096 -C "peter.sooley@gmail.com" -f ~/.ssh/gitlab_rsa
 fi
 
-if [ ! -f ~/.ssh/bitbucket/id_rsa ]; then
+if [ ! -f /.ssh/bitbucket_rsa ]; then
 	echo "Generating SSH key for bitbucket"
-	ssh-keygen -t rsa -b 4096 -C "peter.sooley@gmail.com" -f ~/.ssh/bitbucket/id_rsa
+	ssh-keygen -t rsa -b 4096 -C "peter.sooley@gmail.com" -f ~/.ssh/bitbucket_rsa
 fi
 
 cp confs/ssh.config ~/.ssh/config
@@ -86,4 +86,12 @@ require_pkg alacritty
 #########################################################
 
 require_pkg neovim
+
+
+#### FISH
+#########################################################
+
+require_pkg fish
+mkdir ~/.config/fish
+cp confs/config.fish ~/.config/fish/config.fish
 
